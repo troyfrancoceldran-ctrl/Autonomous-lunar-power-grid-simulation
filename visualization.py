@@ -464,9 +464,9 @@ def figure_estimator(history, path=None):
 
     bot.axhline(0, color=THEME.ink, linewidth=1.0, zorder=2)
     bot.plot(t, drift, color=THEME.critical, linewidth=1.6,
-             label=f"counting error, reaching {max(drift, key=abs):+.0f} %")
+             label="counting error")
     bot.plot(t, err, color=THEME.series[0], linewidth=2.0,
-             label=f"EKF error, bounded within {max(err, key=abs):+.2f} %")
+             label="EKF error")
     _style(bot, "", "estimate - truth  [% SoC]", pad=18)
     _legend(bot, 2)
     bot.set_xlim(t[0], t[-1])
