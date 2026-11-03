@@ -208,8 +208,10 @@ relative — because a port nobody checks is a second source of truth that
 drifts silently.
 
 On the page: a live estimator tile, a truth-versus-estimate chart and a
-Kalman-gain chart. Over one synodic month the EKF stays within **1.29 %**
-while pure coulomb counting on the same readings reaches **62.45 %**.
+Kalman-gain chart. Over one lunar cycle (708.7 h), six seeds,
+matched-model simulation: EKF max error 1.14-1.33 points of SOC; the same
+biased current reading integrated alone is off by 83.0-85.0 points
+(unclamped; a real counter saturates at 0 %).
 
 ---
 

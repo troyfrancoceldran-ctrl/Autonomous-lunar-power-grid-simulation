@@ -394,9 +394,10 @@ dominance of stored energy, not by the quality of the estimate.** It is reported
 as a **lower bound**, because only the battery is estimated; the RFC has no OCV
 curve or terminals in this model.
 
-What the estimator *does* deliver is visible on the live page: across one
-synodic month it stays within **1.29 %** while pure coulomb counting on the same
-readings reaches **62.45 %**. Unbounded drift becomes bounded error. That is the
+Over one lunar cycle (708.7 h), six seeds, matched-model simulation: EKF max
+error 1.14-1.33 points of SOC; the same biased current reading integrated alone
+is off by 83.0-85.0 points (unclamped; a real counter saturates at 0 %).
+Unbounded drift becomes bounded error. That is the
 finding, and it holds whether or not the controller is listening.
 
 ---

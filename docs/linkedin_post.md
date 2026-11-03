@@ -26,9 +26,11 @@ negative result, the short one leads with the hardware.
 > exactly why Kalman filters exist in battery management.
 >
 > So I wrote one. An Extended Kalman Filter in C++, estimating charge from a
-> voltage and a current sensor that lies by 2 A. It works: across one lunar
-> month it stays within **1.29 %** of truth while plain coulomb counting on the
-> same readings drifts to **62.45 %**. Unbounded drift becomes bounded error.
+> voltage and a current sensor that lies by 2 A. Over one lunar cycle (708.7 h),
+> six seeds, matched-model simulation: EKF max error 1.14-1.33 points of SOC;
+> the same biased current reading integrated alone is off by 83.0-85.0 points
+> (unclamped; a real counter saturates at 0 %). Unbounded drift becomes bounded
+> error.
 > That's the whole point of the filter.
 >
 > Then I fed the estimate to the controller instead of the truth, expecting
