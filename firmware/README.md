@@ -33,7 +33,7 @@ cmake -S firmware -B firmware/build && cmake --build firmware/build
 ```
 
 The golden records what the real `AutonomousController` was **shown** and what
-it **did** at all 1440 ticks of a full synodic month, captured by wrapping
+it **did** at all 1440 ticks of 1440 h (60 days), captured by wrapping
 `controller.update` inside the running simulation — not by reconstructing its
 inputs afterwards, which would be a second implementation of the thing under
 test and would agree with the port for the same wrong reasons.

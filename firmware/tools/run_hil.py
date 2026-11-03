@@ -41,7 +41,7 @@ COMPARE_FIELDS = ["aggregate_soc", "headroom_w", "served_w", "unserved_w",
 
 
 def run(controller=None):
-    """One full synodic month. Returns (history, summary, seconds)."""
+    """1440 h (60 days). Returns (history, summary, seconds)."""
     bus = main.build_outpost(LunarEnvironment(), topology=True, converters=True)
     if controller is not None:
         bus.controller = controller
