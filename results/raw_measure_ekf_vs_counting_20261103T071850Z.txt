@@ -1,0 +1,68 @@
+utc: 20261103T071850Z
+python: 3.13.5
+library: estimator/build/libekf_c.dylib  sha256 eb8b93b2e2cc632f8d113765717279fe8c3cd55a75c3fde266bcdda193650a74  mtime 2026-09-15T16:58:19.443531
+scenario: nominal; FleetEstimator defaults except seed
+error unit: percentage points of SOC, (estimate - truth) * 100
+
+  seed window_h ticks series                max_abs      final       rmse
+-------------------------------------------------------------------------
+ 12345    708.7   708 ekf                    1.3258    -0.5111     0.4175
+ 12345    708.7   708 count_clamped         43.0623   -12.3344    18.4560
+ 12345    708.7   708 count_unclamped       84.9541   -84.9541    48.7774
+ 12345   1440.0  1440 ekf                    1.3258    -0.3232     0.3937
+ 12345   1440.0  1440 count_clamped         53.8023   -15.1140    22.4916
+ 12345   1440.0  1440 count_unclamped      171.3596  -171.3596    99.0281
+
+     1    708.7   708 ekf                    1.1950    -0.4800     0.3941
+     1    708.7   708 count_clamped         43.1121   -11.5326    18.6328
+     1    708.7   708 count_unclamped       83.8762   -83.8762    48.6302
+     1   1440.0  1440 ekf                    1.2292    -0.2430     0.3815
+     1   1440.0  1440 count_clamped         53.7036   -15.0281    22.4560
+     1   1440.0  1440 count_unclamped      170.7051  -170.7051    98.5322
+
+     2    708.7   708 ekf                    1.1887    -0.5202     0.3928
+     2    708.7   708 count_clamped         42.8496   -11.8365    18.2971
+     2    708.7   708 count_unclamped       84.3820   -84.3820    48.4354
+     2   1440.0  1440 ekf                    1.1999    -0.2744     0.3810
+     2   1440.0  1440 count_clamped         53.1334   -15.1175    22.1221
+     2   1440.0  1440 count_unclamped      170.2851  -170.2851    98.3371
+
+     3    708.7   708 ekf                    1.1352    -0.5589     0.3900
+     3    708.7   708 count_clamped         42.4532   -11.5130    18.1488
+     3    708.7   708 count_unclamped       82.9688   -82.9688    48.0521
+     3   1440.0  1440 ekf                    1.1410    -0.3130     0.3768
+     3   1440.0  1440 count_clamped         54.0127   -14.6194    22.2828
+     3   1440.0  1440 count_unclamped      169.7010  -169.7010    97.9968
+
+     4    708.7   708 ekf                    1.2050    -0.4505     0.4010
+     4    708.7   708 count_clamped         43.7519   -11.5970    18.8130
+     4    708.7   708 count_unclamped       84.2945   -84.2945    49.2197
+     4   1440.0  1440 ekf                    1.2622    -0.3491     0.3882
+     4   1440.0  1440 count_clamped         53.4750   -15.2604    22.3935
+     4   1440.0  1440 count_unclamped      170.7006  -170.7006    98.7550
+
+     5    708.7   708 ekf                    1.1585    -0.5078     0.3967
+     5    708.7   708 count_clamped         42.5766   -11.5603    18.2983
+     5    708.7   708 count_unclamped       83.6150   -83.6150    48.2726
+     5   1440.0  1440 ekf                    1.1585    -0.3123     0.3790
+     5   1440.0  1440 count_clamped         53.8919   -14.7378    22.2770
+     5   1440.0  1440 count_unclamped      170.3083  -170.3083    98.3285
+
+first hour the CLAMPED counter reads 0 (end-of-tick time):
+  seed 12345: 363.0000 h
+  seed     1: 363.0000 h
+  seed     2: 363.0000 h
+  seed     3: 363.0000 h
+  seed     4: 362.0000 h
+  seed     5: 363.0000 h
+
+reconstruction check, max |rebuilt clamped - est:counted|:
+  seed 12345: 0.000e+00
+  seed     1: 0.000e+00
+  seed     2: 0.000e+00
+  seed     3: 0.000e+00
+  seed     4: 0.000e+00
+  seed     5: 0.000e+00
+
+raw:      results/raw_measure_ekf_vs_counting_20261103T071850Z.txt
+per-tick: results/per_tick_ekf_vs_counting_20261103T071850Z.csv
