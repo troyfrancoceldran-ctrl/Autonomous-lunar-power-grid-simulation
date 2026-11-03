@@ -1,4 +1,4 @@
-# Lunar Microgrid Simulation
+# Autonomous Lunar Power Grid Simulation
 
 An hour-by-hour simulation of the power system for an autonomous lunar outpost:
 a photovoltaic array, a fission reactor, a battery, a regenerative fuel cell,
