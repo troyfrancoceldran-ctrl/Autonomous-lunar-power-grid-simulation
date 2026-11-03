@@ -202,6 +202,7 @@ number we can state.
       themes. In the browser run the EKF stays within 1.29 % while pure
       coulomb counting reaches 62.45 % — a 48x difference, which is the
       finding stated as a picture.
+      2026-11-03: the 1.29 % / 62.45 % / 48x figures above came from a browser run and did not reproduce; see results/measure_ekf_vs_counting.py for the six-seed measurement.
       (B03 was numbered before B04 but sequenced after it, because it needed
       hardware that was not attached and produced no finding of its own. The
       board arrived 2026-09-15 and B03 is recorded above, complete.)
